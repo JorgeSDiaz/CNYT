@@ -7,10 +7,6 @@ class Complejo:
         :param n1: parte real o el valor de rho
         :param n2: parte compleja o el valor del angulo en grados
         :param isCartesiano: especifica si es cartesiano o no
-        self.__real
-        self.__complejo
-        self.__modulo
-        self.__angle
         """
 
         if isCartesiano:
@@ -29,8 +25,9 @@ class Complejo:
     @staticmethod
     def decode(num: str):
         """
+        convierte un string que posee un numero complejo escrito de forma cartesiana a un numero complejo    
         :param num: es de la forma a +bi
-        :return:
+        :return: Complejo()
         """
         aux = num.split()
         if 'i' in aux[1]:
@@ -38,25 +35,47 @@ class Complejo:
         else:
             return Complejo(int(aux[1].strip()), int(aux[0][:len(aux[0]) - 1].strip()))
 
-    def getCartesiano(self):
+    def getCartesiano(self) -> str:
+        """
+        Retorna un string con el numero en corrdenadas cartesianas
+        :return: el numero en coordenadas cartesianas
+        """
         return "({0}, {1})".format(round(self.real, 2), round(self.complejo,2))
 
-    def get(self):
+    def get(self) -> str:
+        """
+        Retorna un string con el numero en corrdenadas cartesianas pero mostrando la parte compleja
+        :return: string con el numero
+        """
         return "{0} {1}i".format(self.real, self.__getComplejo())
 
-    def getPolar(self):
+    def getPolar(self) -> str:
+        """
+        Retorna un string con el numero en corrdenadas polares
+        :return: string con el numero
+        """
         return "({0}, {1}°)".format(self.rho, self.angle)
 
-    def getAngle(self):
+    def getAngle(self) ->str:
+        """
+        Retorna un string con el angulo en grados.
+        :return: string con el numero
+        """
         return "{0}°".format(self.angle)
 
-    def __getComplejo(self):
+    def __getComplejo(self) -> str:
+        """
+        Retorna un string con la parte compleja del numero añadiendo su signo
+        """
         if self.complejo > 0:
             return '+{0}'.format(self.complejo)
         else:
             return str(self.complejo)
 
-    def __calculateAngle(self):
+    def __calculateAngle(self) -> float:
+        """
+        Calcula el valor del angulo cuando se tiene el numero en coordenadas cartesianas
+        """
         if self.real != 0:
             num = round(math.atan2(self.complejo, self.real)*57.3, 2)
             if self.complejo < 0:
@@ -68,7 +87,10 @@ class Complejo:
         else:
             return None
 
-    def __calculateModulo(self):
+    def __calculateModulo(self) -> float:
+        """
+        Calcula el valor del modulo del numero
+        """
         return ((self.real ** 2) + (self.complejo ** 2)) ** 0.5
 
 
