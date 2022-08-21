@@ -17,7 +17,14 @@
  - Fase
 
  ## Instalación
- Para hacer uso de esta calculadora solo debe clonar el repositorio y ejecutar el archivo calculadoraCuantica.py
+ Para hacer uso de esta calculadora solo debe clonar el repositorio y ejecutar el archivo main.py
 
  ## Test
- Para correr las pruebas simple
+ Para correr las pruebas simplemente se debe ejecutar el archivo tests.py
+
+## Uso
+Luego de ejecutar main.py, el programa lo va guiando indicando que valores debe de digitar y como.
+ ### Autor
+ Juan Pablo Fonseca
+
+ 
