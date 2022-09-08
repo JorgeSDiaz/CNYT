@@ -24,7 +24,6 @@ def main():
     continua = input("Desea realizar otra operación? Se usarán los mismos valores.Y/N \n") or 'Y'
     if continua.upper() == 'Y':
         calc.printOptions()
-    # TODO pasar calculadoras a los controllers
 
 
 main()

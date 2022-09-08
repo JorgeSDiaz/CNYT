@@ -25,4 +25,5 @@ def test():
     assert(rta.modulo == 1.0)
     rta = c.conjugado(c1)
     assert(rta.complejo == -1)
-    assert(c.getFase(c2) > 62 and c.getFase(c2) < 65)
+    assert(62 < c.getFase(c2) < 65)
+

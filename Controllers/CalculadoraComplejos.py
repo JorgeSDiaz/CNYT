@@ -58,8 +58,8 @@ class CalculadoraComplejos(ICalculadora):
     @staticmethod
     def multComplex(n1: Complejo, n2: Complejo) -> Complejo:
         real = (n1.real * n2.real) + (n1.complejo * n2.complejo * -1)
-        decimal = (n1.real * n2.complejo) + (n1.complejo * n2.real)
-        return Complejo(real, decimal)
+        complejo = (n1.real * n2.complejo) + (n1.complejo * n2.real)
+        return Complejo(real, complejo)
 
     @staticmethod
     def divComplex(n1: Complejo, n2: Complejo) -> Complejo or None:

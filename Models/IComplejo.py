@@ -13,3 +13,9 @@ class IComplejo:
     @abstractmethod
     def decode(item: str):
         pass
+
+    @staticmethod
+    @abstractmethod
+    def recibaNum():
+        pass
+

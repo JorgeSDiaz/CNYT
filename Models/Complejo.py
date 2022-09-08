@@ -4,6 +4,7 @@ from Models.IComplejo import IComplejo
 
 
 class Complejo(IComplejo):
+
     def __init__(self, n1: float, n2: float, isCartesiano=True):
         """
         :param n1: parte real o el valor de rho
@@ -24,6 +25,13 @@ class Complejo(IComplejo):
             self.complejo = self.rho * math.sin(self.angle * math.pi / 180)
             self.modulo = self.__calculateModulo()
 
+    def __eq__(self, other):
+        areEquals = False
+        if isinstance(other, Complejo) and self.real == other.real and self.complejo == other.complejo:
+            areEquals = True
+
+        return areEquals
+
     @staticmethod
     def decode(num: str):
         """
@@ -36,6 +44,10 @@ class Complejo(IComplejo):
             return Complejo(int(aux[0].strip()), int(aux[1][:len(aux[1])-1].strip()))
         else:
             return Complejo(int(aux[1].strip()), int(aux[0][:len(aux[0]) - 1].strip()))
+
+    @staticmethod
+    def recibaNum():
+        return Complejo.decode(input("por favor digite el  numero de la forma a +bi\n"))
 
     def getCartesiano(self) -> str:
         """
