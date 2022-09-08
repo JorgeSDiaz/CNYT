@@ -40,6 +40,7 @@ class MatrizCompleja(IComplejo):
             for i in range(len(self.components)):
                 print(self.components[i].getComplejo(j).get(), end="  ")
             print()
+        return ""
 
     def isSquare(self):
         return len(self.components[0]) == len(self.components)

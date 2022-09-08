@@ -9,6 +9,7 @@ def main():
     print("1. Operaciones de numeros complejos")
     print("2. Operaciones de vectores complejos")
     print("3. Operaciones de matrices complejas")
+    print("4. Salir")
     option = int(input("Elija un menú ingresando el numero\n"))
     calc: ICalculadora
     if option not in [1, 2, 3]:
@@ -20,10 +21,14 @@ def main():
         calc = CalculadoraVectores()
     else:
         calc = CalculadoraMatrices()
-    calc.printOptions()
-    continua = input("Desea realizar otra operación? Se usarán los mismos valores.Y/N \n") or 'Y'
-    if continua.upper() == 'Y':
+
+    if option != 4:
         calc.printOptions()
+        continua = input("Desea realizar otra operación de esta calculadora? Y/N \n") or 'Y'
+        if continua.upper() == 'Y':
+            calc.printOptions()
+        else:
+            main()
 
 
 main()

@@ -40,10 +40,11 @@ class VectorComplejo(IComplejo):
         return v
 
     def get(self):
-        print("[")
+        rta = "["
         for item in self.components:
-            print("({0})".format(item.get()), end=" ")
-        print("]")
+            rta += item.get() + "  "
+        rta += "]"
+        return rta
 
     def getComplejo(self, pos) -> Complejo:
         return self.components[pos]
